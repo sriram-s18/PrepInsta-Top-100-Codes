@@ -1,12 +1,16 @@
 import java.util.Scanner;
 
-
-//125 -> 1^3 + 2^3 + 5^3
-public class ArmstrongNumber {
+public class ArmstrongNumberinGivenRange {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        System.out.println(Armstrong(num));
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        for(int i =a; i<=b; i++){
+            if(Armstrong(i)){
+                System.out.println(i + " is Armstrong Number");
+            }
+        }
     }
 
     static boolean Armstrong(int num){
@@ -17,9 +21,9 @@ public class ArmstrongNumber {
         int tmp1 = num;
 
         while(num>0){
-         tmp = num%10;
-         sum = sum + pow(tmp,power);
-         num = num/10;
+            tmp = num%10;
+            sum = sum + pow(tmp,power);
+            num = num/10;
         }
 
         return tmp1==sum;
